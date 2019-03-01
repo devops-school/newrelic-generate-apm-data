@@ -3,15 +3,15 @@
 # Variables
 WAR_FILE_V1="petclinic-1.0.war"
 WAR_FILE_V2="petclinic-2.0.war"
-HOST_NAME="ec2-your-host-name.eu-west-1.compute.amazonaws.com"
+HOST_NAME="ec2-13-233-92-233.ap-south-1.compute.amazonaws.com"
 PORT="80"
 
-AWS_KEY_FILE="./your-key-file.pem"
+AWS_KEY_FILE="./rajesh-mumbai.pem"
 AWS_EC2_INSTANCE="ec2-user@${HOST_NAME}"
 
 APP_URL="http://${HOST_NAME}:${PORT}/petclinic/"
-NR_API_KEY="your-api-key"
-NR_APP_ID="your-app-id"
+NR_API_KEY="92eb026ce30284574b8a72659ef3632a963803c6ed6485a"
+NR_APP_ID="145211100"
 
 NR_DEPLOY_CHANGELOG_V1="Initial deploy"
 NR_DEPLOY_CHANGELOG_V2="Replaced dandelion datatables with jQuery, removed session state caching"
@@ -19,7 +19,7 @@ NR_DEPLOY_DESC_V1="v1.0"
 NR_DEPLOY_DESC_V2="Upgrade to v2.0"
 NR_DEPLOY_REVISION_V1="2738cbdcca"
 NR_DEPLOY_REVISION_V2="3d2d67bbfb"
-NR_DEPLOY_USER="Hugo Awesomesauce"
+NR_DEPLOY_USER="Rajesh Kumar"
 
 JMETER_SCRIPT="aws.jmx"
 
@@ -34,11 +34,11 @@ deployApp ()
 	
 	# Restart Docker container
 	echo "\n--- Restarting petclinic container"
-	ssh -i $AWS_KEY_FILE $AWS_EC2_INSTANCE 'docker restart petclinic'
+	# ssh -i $AWS_KEY_FILE $AWS_EC2_INSTANCE 'docker restart petclinic'
 	
 	# Wait for app restart
 	echo "\n--- Waiting for app restart"
-	sleep 20
+	sleep 30
 	while [ $(curl -s -o /dev/null -I -w "%{http_code}" $APP_URL) -ne 200 ] ; do
 		printf "."
 	done
