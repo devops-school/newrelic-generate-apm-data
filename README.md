@@ -2,7 +2,7 @@
 
 ## Description
 
-This script deploys the [Spring Pet Clinic](https://github.com/NewRelicUniversity/spring-petclinic) sample application to an AWS EC2 instance that has been configured to run Pet Clinic and MySQL in Docker containers. It uses Apache JMeter to send traffic to the application, which has a memory leak; the traffic will cause the application to use increasingly more memory, resulting in slower transaction response times.
+This script deploys the [Spring Pet Clinic](https://github.com/devopsschool-demo-labs-projects/newrelic-spring-petclinic) sample application to an AWS EC2 instance that has been configured to run Pet Clinic and MySQL in Docker containers. It uses Apache JMeter to send traffic to the application, which has a memory leak; the traffic will cause the application to use increasingly more memory, resulting in slower transaction response times.
 
 After the initial JMeter script completes (in approximately 30 minutes), the script deploys a second version of the application that omits the [buggy component](https://github.com/dandelion/dandelion-datatables). It then re-reruns the JMeter script to demonstrate that the application's performance problem has been corrected.
 
