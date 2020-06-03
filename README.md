@@ -4,17 +4,20 @@
 
 This script deploys the [Spring Pet Clinic](https://github.com/devopsschool-demo-labs-projects/newrelic-spring-petclinic) sample application to an AWS EC2 instance that has been configured to run Pet Clinic and MySQL in Docker containers. It uses Apache JMeter to send traffic to the application, which has a memory leak; the traffic will cause the application to use increasingly more memory, resulting in slower transaction response times.
 
-After the initial JMeter script completes (in approximately 30 minutes), the script deploys a second version of the application that omits the [buggy component](https://github.com/dandelion/dandelion-datatables). It then re-reruns the JMeter script to demonstrate that the application's performance problem has been corrected.
+Phase 1 - After the initial JMeter script completes (in approximately 30 minutes), 
+Phase 2 - The script deploys a second version of the application that omits the
+
+[buggy component] (https://github.com/dandelion/dandelion-datatables). It then re-reruns the JMeter script to demonstrate that the application's performance problem has been corrected.
 
 ## Required Software
 
-1. Ensure that you have the necessary [Java runtime](http://www.java.com/en/download/mac_download.jsp) installed. JMeter 3.x requires Java 7 or higher.
+Step 1. Ensure that you have the necessary [Java runtime](http://www.java.com/en/download/mac_download.jsp) installed. JMeter 3.x requires Java 7 or higher.
 
-2. Download and install [Apache JMeter](http://jmeter.apache.org/download_jmeter.cgi).
+Step 2. Download and install [Apache JMeter](http://jmeter.apache.org/download_jmeter.cgi).
 
-3. Download and install the [JMeter Standard Plugins](http://jmeter-plugins.org/downloads/all/). The JMeter scripts use the Stepping Thread Group plugin.
+Step 3. Download and install the [JMeter Standard Plugins](http://jmeter-plugins.org/downloads/all/). The JMeter scripts use the Stepping Thread Group plugin.
 
-4. Enable the _Custom Thread Groups_ plugin: 
+Step 4. Enable the _Custom Thread Groups_ plugin: 
 
   a. Select _Plugins Manager_ from JMeter's _Options_ menu. 
   
